@@ -298,17 +298,13 @@
   .article-card{border-radius:20px;overflow:hidden;transition:transform .5s var(--ease), box-shadow .5s var(--ease);}
   .article-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.4);}
   .article-thumb{
-    height:150px;position:relative;overflow:hidden;
+    aspect-ratio:3 / 4;position:relative;overflow:hidden;
     background:linear-gradient(135deg, rgba(214,168,79,.25), rgba(58,36,22,.6));
   }
   .article-thumb::after{
     content:"";position:absolute;inset:0;
     background:radial-gradient(circle at 30% 30%, rgba(232,199,126,.4), transparent 60%);
   }
-  .article-body{padding:26px;}
-  .article-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-soft);}
-  .article-body h3{font-size:17px;margin:12px 0 10px;color:var(--cream);line-height:1.4;}
-  .article-body p{font-size:13.5px;color:var(--beige);font-weight:300;margin-bottom:16px;}
   .image-frame{border-radius:24px;overflow:hidden;border:1px solid var(--glass-border);background:rgba(247,238,220,.04);box-shadow:0 24px 60px rgba(0,0,0,.32);}
   .image-frame img{width:100%;height:100%;min-height:360px;object-fit:cover;}
   .detail-list{display:grid;gap:12px;margin-top:24px;}
@@ -565,35 +561,15 @@
     <div class="journal-grid">
       <div class="glass article-card reveal">
         <div class="article-thumb"><img src="assets/gallery/founder-portrait.jpg" alt="Yaa Meeraan founder portrait"></div>
-        <div class="article-body">
-          <span class="article-tag">Portrait</span>
-          <h3>Founder Portrait</h3>
-          <p>Baba Ahamed Kabeer Shattari, spiritual meditation and pilgrimage guider.</p>
-        </div>
       </div>
       <div class="glass article-card reveal reveal-delay-1">
         <div class="article-thumb"><img src="assets/gallery/staff-portrait.jpg" alt="Yaa Meeraan portrait with staff"></div>
-        <div class="article-body">
-          <span class="article-tag">Portrait</span>
-          <h3>Guidance Image</h3>
-          <p>A Yaa Meeraan gallery image representing spiritual guidance and tradition.</p>
-        </div>
       </div>
       <div class="glass article-card reveal reveal-delay-2">
         <div class="article-thumb"><img src="assets/gallery/seated-portrait.jpg" alt="Yaa Meeraan seated portrait"></div>
-        <div class="article-body">
-          <span class="article-tag">Portrait</span>
-          <h3>Community Portrait</h3>
-          <p>Gallery image added from the Yaa Meeraan local collection.</p>
-        </div>
       </div>
       <div class="glass article-card reveal reveal-delay-3">
         <div class="article-thumb"><img src="assets/gallery/organization-sky-logo.png" alt="Yaa Meeraan organization logo with sky background"></div>
-        <div class="article-body">
-          <span class="article-tag">Logo</span>
-          <h3>Organization Logo</h3>
-          <p>Yaa Meeraan Organization logo artwork.</p>
-        </div>
       </div>
     </div>
   </div>
