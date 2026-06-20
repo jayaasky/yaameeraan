@@ -305,6 +305,16 @@
     content:"";position:absolute;inset:0;
     background:radial-gradient(circle at 30% 30%, rgba(232,199,126,.4), transparent 60%);
   }
+  .article-thumb::after{pointer-events:none;}
+  .gallery-open{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;}
+  .gallery-open img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease);}
+  .gallery-open:hover img,.gallery-open:focus-visible img{transform:scale(1.035);}
+  .gallery-open:focus-visible{outline:2px solid var(--gold);outline-offset:-3px;}
+  .gallery-lightbox{width:min(94vw,1100px);max-width:1100px;max-height:92vh;padding:0;border:1px solid rgba(214,168,79,.35);border-radius:18px;background:var(--navy);box-shadow:0 30px 100px rgba(0,0,0,.72);overflow:hidden;}
+  .gallery-lightbox::backdrop{background:rgba(3,5,8,.88);backdrop-filter:blur(6px);}
+  .gallery-lightbox img{display:block;width:auto;max-width:100%;height:auto;max-height:90vh;margin:auto;object-fit:contain;}
+  .lightbox-close{position:absolute;top:12px;right:12px;z-index:2;width:44px;height:44px;border:1px solid rgba(255,255,255,.45);border-radius:50%;color:#fff;background:rgba(8,11,18,.76);font-size:28px;line-height:1;cursor:pointer;}
+  .lightbox-close:hover,.lightbox-close:focus-visible{background:var(--gold);color:var(--navy);}
   .image-frame{border-radius:24px;overflow:hidden;border:1px solid var(--glass-border);background:rgba(247,238,220,.04);box-shadow:0 24px 60px rgba(0,0,0,.32);}
   .image-frame img{width:100%;height:100%;min-height:360px;object-fit:cover;}
   .detail-list{display:grid;gap:12px;margin-top:24px;}
@@ -386,6 +396,7 @@
     <a href="#about">About</a>
     <a href="#guidance">Services</a>
     <a href="#journal">Gallery</a>
+    <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener">Instagram</a>
     <a href="#contact">Contact</a>
   </nav>
   <a href="https://wa.me/94772033009" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
@@ -397,6 +408,7 @@
   <a href="#about">About</a>
   <a href="#guidance">Services</a>
   <a href="#journal">Gallery</a>
+  <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener">Instagram</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -560,20 +572,31 @@
 
     <div class="journal-grid">
       <div class="glass article-card reveal">
-        <div class="article-thumb"><img src="assets/gallery/founder-portrait.jpg" alt="Yaa Meeraan founder portrait"></div>
+        <div class="article-thumb"><button class="gallery-open" type="button" data-full="assets/gallery/founder-portrait.jpg" aria-label="Open founder portrait"><img src="assets/gallery/founder-portrait.jpg" alt="Yaa Meeraan founder portrait"></button></div>
       </div>
       <div class="glass article-card reveal reveal-delay-1">
-        <div class="article-thumb"><img src="assets/gallery/staff-portrait.jpg" alt="Yaa Meeraan portrait with staff"></div>
+        <div class="article-thumb"><button class="gallery-open" type="button" data-full="assets/gallery/staff-portrait.jpg" aria-label="Open guidance portrait"><img src="assets/gallery/staff-portrait.jpg" alt="Yaa Meeraan portrait with staff"></button></div>
       </div>
       <div class="glass article-card reveal reveal-delay-2">
-        <div class="article-thumb"><img src="assets/gallery/seated-portrait.jpg" alt="Yaa Meeraan seated portrait"></div>
+        <div class="article-thumb"><button class="gallery-open" type="button" data-full="assets/gallery/seated-portrait.jpg" aria-label="Open seated portrait"><img src="assets/gallery/seated-portrait.jpg" alt="Yaa Meeraan seated portrait"></button></div>
       </div>
       <div class="glass article-card reveal reveal-delay-3">
-        <div class="article-thumb"><img src="assets/gallery/organization-sky-logo.png" alt="Yaa Meeraan organization logo with sky background"></div>
+        <div class="article-thumb"><button class="gallery-open" type="button" data-full="assets/gallery/organization-sky-logo.png" aria-label="Open organization logo artwork"><img src="assets/gallery/organization-sky-logo.png" alt="Yaa Meeraan organization logo with sky background"></button></div>
+      </div>
+      <div class="glass article-card reveal">
+        <div class="article-thumb"><button class="gallery-open" type="button" data-full="assets/gallery/pilgrimage-tamil.jpg" aria-label="Open Tamil pilgrimage guidance image"><img src="assets/gallery/pilgrimage-tamil.jpg" alt="Tamil pilgrimage guidance message"></button></div>
+      </div>
+      <div class="glass article-card reveal reveal-delay-1">
+        <div class="article-thumb"><button class="gallery-open" type="button" data-full="assets/gallery/pilgrimage-english.jpg" aria-label="Open English pilgrimage guidance image"><img src="assets/gallery/pilgrimage-english.jpg" alt="English pilgrimage guidance message"></button></div>
       </div>
     </div>
   </div>
 </section>
+
+<dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Expanded gallery image">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">&times;</button>
+  <img id="lightboxImage" src="" alt="">
+</dialog>
 
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
@@ -588,6 +611,7 @@
         <div class="contact-list" style="margin-top:26px;">
           <a href="tel:+94772033009"><span>Phone</span><strong>+94 772 033 009</strong></a>
           <a href="https://wa.me/94772033009" target="_blank" rel="noopener"><span>WhatsApp</span><strong>+94 772 033 009</strong></a>
+          <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener"><span>Instagram</span><strong>@yaa_meeraan_org</strong></a>
           <a href="mailto:yaameeraan.org@gmail.com"><span>Email</span><strong>yaameeraan.org@gmail.com</strong></a>
           <a href="https://yaameeraan.website/"><span>Website</span><strong>yaameeraan.website</strong></a>
           <address><span>Address</span><strong>139/E, Sailan Road, Kalmunai, 32300, Sri Lanka</strong></address>
@@ -612,6 +636,7 @@
         <a href="#about">About</a>
         <a href="#guidance">Services</a>
         <a href="#journal">Gallery</a>
+        <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener">Instagram</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -634,6 +659,24 @@
   const mobileMenu = document.getElementById('mobileMenu');
   burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+
+  // Gallery lightbox
+  const galleryLightbox = document.getElementById('galleryLightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxClose = document.getElementById('lightboxClose');
+  document.querySelectorAll('.gallery-open').forEach(button => {
+    button.addEventListener('click', () => {
+      const preview = button.querySelector('img');
+      lightboxImage.src = button.dataset.full;
+      lightboxImage.alt = preview.alt;
+      galleryLightbox.showModal();
+    });
+  });
+  lightboxClose.addEventListener('click', () => galleryLightbox.close());
+  galleryLightbox.addEventListener('click', event => {
+    if (event.target === galleryLightbox) galleryLightbox.close();
+  });
 
   // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
