@@ -107,6 +107,14 @@
     color:var(--gold-soft);transition:all .35s var(--ease);
   }
   .nav-cta:hover{background:var(--gold);color:var(--navy);box-shadow:0 0 20px rgba(214,168,79,.5);}
+  .header-actions{display:flex;align-items:center;gap:10px;}
+  .instagram-icon{
+    width:42px;height:42px;display:inline-grid;place-items:center;flex:0 0 42px;
+    border:1px solid var(--gold);border-radius:50%;color:var(--gold-soft);
+    transition:background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);
+  }
+  .instagram-icon svg{width:20px;height:20px;stroke:currentColor;}
+  .instagram-icon:hover,.instagram-icon:focus-visible{background:var(--gold);color:var(--navy);box-shadow:0 0 20px rgba(214,168,79,.5);}
   .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1100;}
   .burger span{width:26px;height:2px;background:var(--cream);transition:.3s;}
 
@@ -117,6 +125,9 @@
   }
   .mobile-menu.open{opacity:1;visibility:visible;}
   .mobile-menu a{font-family:var(--serif);font-size:24px;color:var(--cream);}
+  .mobile-social-actions{display:flex;align-items:center;gap:12px;}
+  .mobile-menu .mobile-whatsapp{padding:10px 22px;border:1px solid var(--gold);border-radius:30px;font-family:var(--sans);font-size:14px;color:var(--gold-soft);}
+  .mobile-menu .instagram-icon{font-family:var(--sans);font-size:inherit;color:var(--gold-soft);}
 
   /* ---------- Buttons ---------- */
   .btn{
@@ -310,9 +321,10 @@
   .gallery-open img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease);}
   .gallery-open:hover img,.gallery-open:focus-visible img{transform:scale(1.035);}
   .gallery-open:focus-visible{outline:2px solid var(--gold);outline-offset:-3px;}
-  .gallery-lightbox{width:min(94vw,1100px);max-width:1100px;max-height:92vh;padding:0;border:1px solid rgba(214,168,79,.35);border-radius:18px;background:var(--navy);box-shadow:0 30px 100px rgba(0,0,0,.72);overflow:hidden;}
+  .gallery-lightbox{position:fixed;inset:0;width:fit-content;max-width:94vw;max-height:92vh;margin:auto;padding:0;border:1px solid rgba(214,168,79,.35);border-radius:18px;background:var(--navy);box-shadow:0 30px 100px rgba(0,0,0,.72);overflow:visible;}
+  .gallery-lightbox[open]{display:flex;align-items:center;justify-content:center;}
   .gallery-lightbox::backdrop{background:rgba(3,5,8,.88);backdrop-filter:blur(6px);}
-  .gallery-lightbox img{display:block;width:auto;max-width:100%;height:auto;max-height:90vh;margin:auto;object-fit:contain;}
+  .gallery-lightbox img{display:block;width:auto;max-width:94vw;height:auto;max-height:90vh;margin:auto;border-radius:17px;object-fit:contain;}
   .lightbox-close{position:absolute;top:12px;right:12px;z-index:2;width:44px;height:44px;border:1px solid rgba(255,255,255,.45);border-radius:50%;color:#fff;background:rgba(8,11,18,.76);font-size:28px;line-height:1;cursor:pointer;}
   .lightbox-close:hover,.lightbox-close:focus-visible{background:var(--gold);color:var(--navy);}
   .image-frame{border-radius:24px;overflow:hidden;border:1px solid var(--glass-border);background:rgba(247,238,220,.04);box-shadow:0 24px 60px rgba(0,0,0,.32);}
@@ -367,7 +379,7 @@
     .about-grid{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
     nav.nav-links{display:none;}
-    .nav-cta{display:none;}
+    .header-actions{display:none;}
     .burger{display:flex;}
   }
   @media (max-width:640px){
@@ -396,10 +408,14 @@
     <a href="#about">About</a>
     <a href="#guidance">Services</a>
     <a href="#journal">Gallery</a>
-    <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener">Instagram</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a href="https://wa.me/94772033009" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
+  <div class="header-actions">
+    <a href="https://wa.me/94772033009" class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.instagram.com/yaa_meeraan_org/" class="instagram-icon" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    </a>
+  </div>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </header>
 
@@ -408,8 +424,13 @@
   <a href="#about">About</a>
   <a href="#guidance">Services</a>
   <a href="#journal">Gallery</a>
-  <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener">Instagram</a>
   <a href="#contact">Contact</a>
+  <div class="mobile-social-actions">
+    <a href="https://wa.me/94772033009" class="mobile-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.instagram.com/yaa_meeraan_org/" class="instagram-icon" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    </a>
+  </div>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -611,7 +632,6 @@
         <div class="contact-list" style="margin-top:26px;">
           <a href="tel:+94772033009"><span>Phone</span><strong>+94 772 033 009</strong></a>
           <a href="https://wa.me/94772033009" target="_blank" rel="noopener"><span>WhatsApp</span><strong>+94 772 033 009</strong></a>
-          <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener"><span>Instagram</span><strong>@yaa_meeraan_org</strong></a>
           <a href="mailto:yaameeraan.org@gmail.com"><span>Email</span><strong>yaameeraan.org@gmail.com</strong></a>
           <a href="https://yaameeraan.website/"><span>Website</span><strong>yaameeraan.website</strong></a>
           <address><span>Address</span><strong>139/E, Sailan Road, Kalmunai, 32300, Sri Lanka</strong></address>
@@ -636,7 +656,6 @@
         <a href="#about">About</a>
         <a href="#guidance">Services</a>
         <a href="#journal">Gallery</a>
-        <a href="https://www.instagram.com/yaa_meeraan_org/" target="_blank" rel="noopener">Instagram</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
